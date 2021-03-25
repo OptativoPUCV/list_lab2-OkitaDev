@@ -72,14 +72,16 @@ void pushFront(List * list, const void * data)
 		list->head->prev = nodo;
 	
 	list->head = nodo;
+	list->tail = list->tail->prev;
 	nodo->prev = NULL;
 
 }
 
 void pushBack(List * list, const void * data) 
 {
-    list->current = list->tail;
-    pushCurrent(list,data);
+  list->current = list->tail;
+  pushCurrent(list,data);
+
 }
 
 //5
