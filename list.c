@@ -48,14 +48,14 @@ void * firstList(List * list)
 
 void * nextList(List * list) 
 {
-	list->current->prev = list->current->next;
-  return (void *) list->current->next->data;
+	return NULL;
 }
 
 //3
 void * lastList(List * list) 
 {
-    return NULL;
+	list->current = list->tail;
+  return (void *) list->current->data;
 }
 
 void * prevList(List * list) 
