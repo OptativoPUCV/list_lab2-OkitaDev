@@ -77,7 +77,7 @@ void pushFront(List * list, const void * data)
 	if(list->tail) 
 		list->tail = nodo;
 	else
-		list->head->next = nodo;
+		list->head = nodo;
 	
 	list->head = nodo;
 
