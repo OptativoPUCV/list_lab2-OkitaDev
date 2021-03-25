@@ -49,7 +49,7 @@ void * firstList(List * list)
 void * nextList(List * list) 
 {
 	list->current->next = list->head->prev;
-  return (void *)list->current->data;
+  return (void *)list->current->prev;
 }
 
 //3
