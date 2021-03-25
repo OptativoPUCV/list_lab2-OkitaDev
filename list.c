@@ -48,7 +48,8 @@ void * firstList(List * list)
 
 void * nextList(List * list) 
 {
-	return NULL;
+	list->current = list->current->next;
+	return (void *) list->current->data;
 }
 
 //3
@@ -78,6 +79,7 @@ void pushFront(List * list, const void * data)
 
 }
 
+//5
 void pushBack(List * list, const void * data) 
 {
   list->current = list->tail;
@@ -85,7 +87,7 @@ void pushBack(List * list, const void * data)
 
 }
 
-//5
+
 void pushCurrent(List * list, const void * data) 
 {
 
