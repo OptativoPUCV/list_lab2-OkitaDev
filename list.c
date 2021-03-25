@@ -41,7 +41,7 @@ List * createList()
 //2
 void * firstList(List * list) 
 {
-  return list->head;
+  return list->tail;
 }
 
 
