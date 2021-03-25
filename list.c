@@ -78,7 +78,7 @@ void pushFront(List * list, const void * data)
 		list->head->prev = nodo;
 	
 	list->head = nodo;
-	prevList(list);
+	list->tail->next = list->tail;
 	nodo->prev = NULL;
 
 }
@@ -107,8 +107,9 @@ void * popBack(List * list) {
     return popCurrent(list);
 }
 
-void * popCurrent(List * list) {
-    return NULL;
+void * popCurrent(List * list) 
+{
+  return NULL;
 }
 
 void cleanList(List * list) {
