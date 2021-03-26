@@ -117,9 +117,19 @@ void * popBack(List * list) {
 
 void * popCurrent(List * list) 
 {
-	list->current->prev = list->current->next;
-	free(list->current);
-  return NULL;
+	Node * temporal = list->head;
+	while(temporal->next != list->current)
+	{
+		temporal = temporal->next;
+	}
+
+	temporal->next = list->current->next;
+
+	free (list->current);
+
+	list->current = list->head;
+
+	return (void *) temporal->data;
 }
 
 void cleanList(List * list) {
