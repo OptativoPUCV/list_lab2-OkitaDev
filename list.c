@@ -128,8 +128,6 @@ void * popCurrent(List * list)
 
 	free (list->current);
 
-	list->current = list->head;
-
 	return (void *) temporal->data;
 }
 
