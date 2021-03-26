@@ -124,8 +124,8 @@ void * popCurrent(List * list)
 		while(temporal->next != list->current)
 			temporal = temporal->next;
 	else
-		while(temporal->next != list->current)
-			temporal = temporal->next;
+		while(temporal->prev != list->current)
+			temporal = temporal->prev;
 
 
 	return (void *) temporal->data;
