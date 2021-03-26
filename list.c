@@ -95,6 +95,7 @@ void pushCurrent(List * list, const void * data)
 {
 	Node * nodo = createNode(data);
 
+	nodo->prev = list->current;
 	list->current->next = nodo;
 }
 
