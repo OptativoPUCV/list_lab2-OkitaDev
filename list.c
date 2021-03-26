@@ -94,6 +94,7 @@ void pushBack(List * list, const void * data)
 void pushCurrent(List * list, const void * data) 
 {
 	Node * nodo = createNode(data);
+	
 	if(list->head == list->current)
 	{
 		nodo->prev = list->current;
@@ -102,7 +103,7 @@ void pushCurrent(List * list, const void * data)
 	}
 	else
 	{
-		list->tail = nodo;
+		list->current = nodo;
 		nodo->prev = list->current;
 		printf("Adios\n");
 	}
