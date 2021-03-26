@@ -103,9 +103,9 @@ void pushCurrent(List * list, const void * data)
 	}
 	else
 	{
-		list->current = nodo;
+		list->current->data = nodo->data;
 		nodo->prev = list->current;
-		if(list->current == nodo)printf("Adios\n");
+		if(list->current == nodo) printf("Adios\n");
 	}
 }
 
