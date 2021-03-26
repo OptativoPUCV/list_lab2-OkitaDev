@@ -117,12 +117,16 @@ void * popBack(List * list) {
 
 void * popCurrent(List * list) 
 {
-	
+	if(list->current->next || list->current->prev) return NULL;
 	Node * temporal = list->current;
 
-	if(list->current->next) return NULL;
+	if(list->current->next)
 		while(temporal->next != list->current)
 			temporal = temporal->next;
+	else
+		while(temporal->next != list->current)
+			temporal = temporal->next;
+
 
 	return (void *) temporal->data;
 }
