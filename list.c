@@ -103,7 +103,7 @@ void pushCurrent(List * list, const void * data)
 	}
 	else
 	{
-		list->current->next = nodo;
+		list->current = nodo;
 		if(list->current->data == nodo->data) printf("Adios\n");
 	}
 }
