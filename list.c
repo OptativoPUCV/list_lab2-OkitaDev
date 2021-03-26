@@ -102,9 +102,8 @@ void pushCurrent(List * list, const void * data)
 	}
 	else
 	{
-		list->tail = nodo;
-		list->current->next = NULL;
-		if(list->current == nodo) printf("Adios\n");
+		list->current->next = nodo;
+		list->tail->next = NULL;
 	}
 }
 
