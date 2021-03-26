@@ -94,15 +94,17 @@ void pushCurrent(List * list, const void * data)
 {
 	Node * nodo = createNode(data);
 
+	nodo->prev = list->current; 
+	
 	if(list->current->prev == NULL)
 	{
-		nodo->prev = list->current; 
+		
 		list->current->next = nodo;
 	}
 	else
 	{
+
 		list->tail= nodo;
-	
 	}
 	
 }
