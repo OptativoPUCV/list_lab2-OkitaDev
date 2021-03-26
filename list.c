@@ -78,7 +78,7 @@ void pushFront(List * list, const void * data)
 		list->tail = nodo;
 	
 	list->head = nodo;
-	nodo->prev =NULL;
+	nodo->prev =NULL; //Al ser el primero, el anterior que el debe estar vacio
 
 }
 
@@ -117,6 +117,8 @@ void * popBack(List * list) {
 
 void * popCurrent(List * list) 
 {
+	list->current->prev = list->current->next;
+	free(list->current);
   return NULL;
 }
 
