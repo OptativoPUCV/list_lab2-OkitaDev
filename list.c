@@ -77,8 +77,9 @@ void pushFront(List * list, const void * data)
 	if(list->tail == NULL) 
 		list->tail = nodo;
 	
-	list->head = nodo;
 	nodo->prev =NULL; //Al ser el primero, el anterior que el debe estar vacio
+
+	list->head = nodo;
 
 }
 
@@ -95,11 +96,7 @@ void pushCurrent(List * list, const void * data)
 {
 	Node * nodo = createNode(data);
 
-	nodo->next = list->current;
-
-	list->current = nodo;
-	
-	nodo->prev = NULL;
+	list->current->next = nodo;
 
 }
 
