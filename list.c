@@ -101,7 +101,7 @@ void pushCurrent(List * list, const void * data)
 	}
 	else
 	{
-
+		list->current->prev = nodo;
 	}
 	
 }
