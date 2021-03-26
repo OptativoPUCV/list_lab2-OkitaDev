@@ -101,6 +101,7 @@ void pushCurrent(List * list, const void * data)
 	}
 	else
 	{
+		nodo->next = list->tail;
 		list->tail = nodo;
 	}
 	
