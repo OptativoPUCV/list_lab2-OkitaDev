@@ -104,7 +104,8 @@ void pushCurrent(List * list, const void * data)
 	{
 		list->tail->next = nodo;
 		nodo->prev = list->current;
-		printf("Adios\n");
+		if(list->tail)
+			printf("Adios\n");
 	}
 }
 
