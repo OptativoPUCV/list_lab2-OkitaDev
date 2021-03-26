@@ -96,9 +96,9 @@ void pushCurrent(List * list, const void * data)
 	Node * nodo = createNode(data);
 
 	nodo->prev = list->current;
+	nodo->next = list->current->next->next; 
 	list->current->next = nodo;
 
-	if(nodo->prev == list->current) printf("SI\n");
 }
 
 void * popFront(List * list) {
