@@ -119,7 +119,7 @@ void * popCurrent(List * list)
 {
 	Node * temporal = list->head;
 
-	if(list->current == NULL && list->current->next == NULL)
+	if(list->current == NULL || list->current->next == NULL)
 		while(temporal->next != list->current)
 		{
 			temporal = temporal->next;
