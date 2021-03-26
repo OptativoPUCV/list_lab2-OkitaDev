@@ -119,6 +119,9 @@ void * popCurrent(List * list)
 {
 	Node * temporal = list->current;
 
+	while(temporal->next != list->current)
+		temporal = temporal->next;
+
 	return (void *) temporal->data;
 }
 
