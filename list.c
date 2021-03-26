@@ -122,14 +122,20 @@ void * popCurrent(List * list)
 
 	if(list->current->next)
 		while(temporal->next != list->current)
-			temporal = temporal->next;
+			{
+				temporal = temporal->next;
+				temporal->next = list->current->next;
+				free(list->current);
+				list->current = list->head;
+			}
 	else
-		while(temporal->prev != list->current)
-			temporal = temporal->prev;
-
-	temporal->next = list->current->next;
-	free(list->current);
-	list->current = list->head;
+		while(temporal->next != list->current)
+			{
+				temporal = temporal->prev;
+				temporal->prev = list->current->prev;
+				free(list->current);
+				list->current = list->tail;
+			}
 
 
 	return (void *) temporal->data;
