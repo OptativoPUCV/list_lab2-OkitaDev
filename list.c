@@ -103,10 +103,10 @@ void pushCurrent(List * list, const void * data)
 	else
 	{
 		nodo->next = NULL;
-		nodo->prev = list->tail;
+		nodo->prev = list->current;
 	}
 
-	list->current->next = nodo;
+	list->tail = nodo;
 }
 
 void * popFront(List * list) {
