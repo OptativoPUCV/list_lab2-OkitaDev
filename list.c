@@ -75,11 +75,10 @@ void pushFront(List * list, const void * data)
 	Node * nodo = createNode(data);
 	
 	if(list->tail == NULL) list->tail = nodo;
-	list->current = nodo;
+
 	nodo->next = list->head;
 	nodo->prev = NULL;
 	list->head = nodo;
-	if(list->head == list->current) printf("HO");
 }
 
 void pushBack(List * list, const void * data) 
@@ -97,7 +96,7 @@ void pushCurrent(List * list, const void * data)
 	if(list->current == list->tail)
 	{
 		nodo->next = NULL;
-		list->current->next = nodo;
+		list->current->prev = list->tail;
 		list->tail = nodo;
 	}
 	else
