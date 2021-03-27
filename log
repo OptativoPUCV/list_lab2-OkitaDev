@@ -1387,3 +1387,9 @@ Sat Mar 27 22:17:05 UTC 2021:
  tests:  10|2
 total_score: 50/70
 4b49add
+Sat Mar 27 22:26:20 UTC 2021: 
+ list.c | 3 +++
+ 1 file changed, 3 insertions(+)
+ tests:  11|1
+total_score: 60/70
+8f73197
