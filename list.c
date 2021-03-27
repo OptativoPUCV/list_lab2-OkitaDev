@@ -123,13 +123,10 @@ void * popCurrent(List * list)
 {
 	const void * aux = list->current->data;
 
-	if(list->current->prev == NULL)
-	{
-		list->current->next->prev = NULL;
-		list->head = list->current->next;
-		free(list->current);
-		list->current = list->head;
-	}
+	list->current->next->prev = NULL;
+	list->head = list->current->next;
+	free(list->current);
+	list->current = list->head;
 
 	return (void *) aux;
 }
