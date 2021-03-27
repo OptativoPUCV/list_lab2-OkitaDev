@@ -99,6 +99,7 @@ void pushCurrent(List * list, const void * data)
 	{
 		nodo->next = NULL;
 		list->tail = nodo;
+		if(list->tail != list->current) printf("HOLA");
 	}
 	else
 	{
