@@ -79,7 +79,7 @@ void pushFront(List * list, const void * data)
 	nodo->next = list->head;
 	nodo->prev = NULL;
 	list->head = nodo;
-	if(list->head == list->current) printf("HO");
+	if(list->head == 0) printf("HO");
 }
 
 void pushBack(List * list, const void * data) 
