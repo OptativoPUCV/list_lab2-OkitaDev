@@ -99,13 +99,10 @@ void pushCurrent(List * list, const void * data)
 	{
 		nodo->next = NULL;
 		list->current->next = nodo;
-		list->tail = nodo;
-		if(list->tail == list->current->next) printf("q");
 	}
 	else
 	{
 		nodo->next = list->current->next;
-		//list->current->next = nodo;
 		list->head->next = nodo;
 	}
 	
