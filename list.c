@@ -104,7 +104,7 @@ void pushCurrent(List * list, const void * data)
 	else
 	{
 		nodo->next = list->current->next;
-		list->current->next = nodo;
+		//list->current->next = nodo;
 		list->head->next = nodo;
 	}
 	
