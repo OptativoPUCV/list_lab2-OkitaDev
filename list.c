@@ -105,6 +105,7 @@ void pushCurrent(List * list, const void * data)
 	{
 		nodo->next = list->current->next;
 		list->current->next = nodo;
+		list->head = nodo;
 	}
 	
 }
@@ -124,8 +125,7 @@ void * popCurrent(List * list)
 	Node * aux = list->current;
 	if(list->current == NULL) return NULL;
 
-	if(aux->next != NULL) list->current->next->prev = aux->prev;
-	if(aux->prev != NULL) list->current->prev->next = aux->next;
+	
 
 	return (void *) aux->data;
 }
