@@ -76,7 +76,6 @@ void pushFront(List * list, const void * data)
 	
 	nodo->next = list->head;
 	
-	
 	nodo->prev =NULL; //Al ser el primero, el anterior que el debe estar vacio
 
 	list->head = nodo;
@@ -121,12 +120,30 @@ void * popBack(List * list) {
 
 void * popCurrent(List * list) 
 {
-	Node * aux = list->current;
-	if(list->current == NULL) return NULL;
+	const void * auxiliar = list->current->data;
+
+	if(list->current == list->head)
+	{
+		list->current->next->prev = NULL;
+		list->head = list->current->prev->next;
+		free(list->current);
+		list->current = list->head;
+	}
+	else
+	{
+		if(list->current == list->tail)
+		{
+			
+		}
+		else
+		{
+
+		}
+	}
 
 	
 
-	return (void *) aux->data;
+	return (void *) auxiliar;
 }
 
 void cleanList(List * list) {
