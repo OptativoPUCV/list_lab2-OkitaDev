@@ -74,12 +74,8 @@ void pushFront(List * list, const void * data)
 {
 	Node * nodo = createNode(data);
 	
-	nodo->next = list->head;
 	nodo->prev =NULL;
 	list->head = nodo;
-	
-	
-
 }
 
 void pushBack(List * list, const void * data) 
