@@ -99,7 +99,7 @@ void pushCurrent(List * list, const void * data)
 		list->current->next = nodo;
 		list->tail = nodo;
 		list->tail->prev = list->current;
-		if(list->tail->prev->prev == list->current) printf("SI\n");
+		if(list->tail->prev->prev == list->current->prev) printf("SI\n");
 		else printf("NO\n");
 	}
 	else
