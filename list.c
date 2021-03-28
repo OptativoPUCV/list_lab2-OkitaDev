@@ -72,17 +72,13 @@ void * prevList(List * list)
 //4
 void pushFront(List * list, const void * data) 
 {
-	/*Node * nodo = createNode(data);
+	Node * nodo = createNode(data);
 	
 	if(list->tail == NULL) list->tail = nodo;
 
 	nodo->next = list->head;
 	nodo->prev = NULL;
-	list->head = nodo;*/
-
-	list->current = list->head;
-  pushCurrent(list,data);
-
+	list->head = nodo;
 }
 
 void pushBack(List * list, const void * data) 
@@ -97,19 +93,17 @@ void pushCurrent(List * list, const void * data)
 	Node * nodo = createNode(data); 
 	nodo->prev = list->current;
 
-	if(list->current == list->tail && list->tail != list->head)//esta al final
+	if(list->current == list->tail)//esta al final
 	{
-	if(list->tail == NULL) list->tail = nodo;
-
-	nodo->next = list->head;
-	nodo->prev = NULL;
-	list->head = nodo;
+		nodo->next = NULL;
+		list->current->next = nodo;
+		list->tail = nodo;
+		list->tail->prev = list->current;
 	}
 	else 
 	{
-		if (list->current == NULL)
+		if (list->current->next == list->head)
 		{
-			list->current = nodo;
 			nodo->next = list->head;
 			list->current->next = nodo;
 			list->head = nodo;
