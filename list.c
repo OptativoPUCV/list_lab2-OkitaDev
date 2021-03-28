@@ -99,13 +99,21 @@ void pushCurrent(List * list, const void * data)
 		list->current->prev = list->tail;
 		list->current->next = nodo;
 		list->tail = nodo;
-		if(list->current->next != list->tail) printf("q");
 	}
 	else
 	{
 		if(list->current == list->head)
 		{
 			nodo->next = list->current->next;
+			list->current->next = nodo;
+		}
+		else
+		{
+			//union con el nodo siguiente al current, para el nuevo nodo
+			nodo->next = list->current->next;
+			list->current->next->prev = nodo;
+
+			//union con el nodo nuevo al current
 			list->current->next = nodo;
 		}
 	}
