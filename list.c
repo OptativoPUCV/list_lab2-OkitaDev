@@ -107,7 +107,7 @@ void pushCurrent(List * list, const void * data)
 			nodo->next = list->current->next;
 			list->current->next = nodo;
 			list->current->next->prev = nodo;
-			if(list->head == list->current) printf("SI\n");
+			if(list->head->next == nodo) printf("SI\n");
 			else printf("NO\n");
 		}
 		else //si no esta ni al inicio ni al final de la lista
