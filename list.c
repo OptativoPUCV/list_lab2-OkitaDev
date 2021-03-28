@@ -100,7 +100,7 @@ void pushCurrent(List * list, const void * data)
 		list->tail = nodo;
 		list->tail->prev = list->current;
 	}
-	else
+	else //Sirve para cualquier parte, menos la cola
 	{
 		//union con el nodo siguiente al current, para el nuevo nodo
 		nodo->next = list->current->next;
