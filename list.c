@@ -97,8 +97,10 @@ void pushCurrent(List * list, const void * data)
 	{
 		nodo->next = NULL;
 		list->current->next = nodo;
-		list->tail->prev = list->current;
 		list->tail = nodo;
+		list->tail->prev = list->current;
+		if(list->tail == list->current) printf("SI\n");
+		else printf("NO\n");
 	}
 	else
 	{
