@@ -99,8 +99,6 @@ void pushCurrent(List * list, const void * data)
 		list->current->next = nodo;
 		list->tail = nodo;
 		list->tail->prev = list->current;
-		if(list->tail->prev->prev == list->current->prev) printf("SI\n");
-		else printf("NO\n");
 	}
 	else
 	{
@@ -108,6 +106,9 @@ void pushCurrent(List * list, const void * data)
 		{
 			nodo->next = list->current->next;
 			list->current->next = nodo;
+			list->current->next->prev = nodo;
+			if(list->head == list->current->next) printf("SI\n");
+			else printf("NO\n");
 		}
 		else //si no esta ni al inicio ni al final de la lista
 		{
