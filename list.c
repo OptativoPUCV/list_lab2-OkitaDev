@@ -102,23 +102,12 @@ void pushCurrent(List * list, const void * data)
 	}
 	else
 	{
-		if(list->current == list->head) //esta al inicio
-		{
-			nodo->next = list->current->next;
-			list->current->next = nodo;
-			list->current->next->prev = nodo;
-			if(list->head->next->prev == nodo) printf("SI\n");
-			else printf("NO\n");
-		}
-		else //si no esta ni al inicio ni al final de la lista
-		{
-			//union con el nodo siguiente al current, para el nuevo nodo
-			nodo->next = list->current->next;
-			list->current->next->prev = nodo;
+		//union con el nodo siguiente al current, para el nuevo nodo
+		nodo->next = list->current->next;
+		list->current->next->prev = nodo;
 
-			//union con el nodo nuevo al current
-			list->current->next = nodo;
-		}
+		//union con el nodo nuevo al current
+		list->current->next = nodo;
 	}
 	
 }
