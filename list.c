@@ -93,21 +93,21 @@ void pushCurrent(List * list, const void * data)
 	Node * nodo = createNode(data); 
 	nodo->prev = list->current;
 
-	if(list->current == list->tail)
+	if(list->current == list->tail)//esta al final
 	{
 		nodo->next = NULL;
-		list->current->prev = list->tail;
 		list->current->next = nodo;
+		list->tail->prev = list->current;
 		list->tail = nodo;
 	}
 	else
 	{
-		if(list->current == list->head)
+		if(list->current == list->head) //esta al inicio
 		{
 			nodo->next = list->current->next;
 			list->current->next = nodo;
 		}
-		else
+		else //si no esta ni al inicio ni al final de la lista
 		{
 			//union con el nodo siguiente al current, para el nuevo nodo
 			nodo->next = list->current->next;
