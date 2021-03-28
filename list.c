@@ -72,13 +72,17 @@ void * prevList(List * list)
 //4
 void pushFront(List * list, const void * data) 
 {
-	Node * nodo = createNode(data);
+	/*Node * nodo = createNode(data);
 	
 	if(list->tail == NULL) list->tail = nodo;
 
 	nodo->next = list->head;
 	nodo->prev = NULL;
-	list->head = nodo;
+	list->head = nodo;*/
+
+	list->current = list->head;
+  pushCurrent(list,data);
+
 }
 
 void pushBack(List * list, const void * data) 
@@ -100,14 +104,24 @@ void pushCurrent(List * list, const void * data)
 		list->tail = nodo;
 		list->tail->prev = list->current;
 	}
-	else //Sirve para cualquier parte, menos la cola
+	else 
 	{
-		//union con el nodo siguiente al current, para el nuevo nodo
-		nodo->next = list->current->next;
-		list->current->next->prev = nodo;
+		if (list->current->next == list->head)
+		{
+			nodo->next = list->head;
+			list->current->next = nodo;
+			list->head = nodo;
+			list->head->next = list->current;
+		}
+		else 
+		{
+			//union con el nodo siguiente al current, para el nuevo nodo
+			nodo->next = list->current->next;
+			list->current->next->prev = nodo;
 
-		//union con el nodo nuevo al current
-		list->current->next = nodo;
+			//union con el nodo nuevo al current
+			list->current->next = nodo;
+		}
 	}
 	
 }
