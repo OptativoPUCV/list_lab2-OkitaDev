@@ -102,14 +102,14 @@ void pushCurrent(List * list, const void * data)
 	}
 	else 
 	{
-		if (list->current->next == list->head)
+		if (list->current->next == list->head) //esta al inicio
 		{
 			nodo->next = list->head;
 			list->current->next = nodo;
 			list->head = nodo;
 			list->head->next = list->current;
 		}
-		else 
+		else //para cualquier posicion
 		{
 			//union con el nodo siguiente al current, para el nuevo nodo
 			nodo->next = list->current->next;
